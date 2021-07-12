@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div class="app" id="app">
+        Nom：<input v-model="name" type="text" name="name" id="name" >
+        Cours：<input v-model="course" type="text" name="course" id="course">
+        受講期：<input v-model="acceptancePeriod" type="text" name="term" id="term">
+        <br>
+        <!-- button v-on:click="addStudent"で、buttonがclickされた時に起動するメソッドを選択する -->
+        <button v-on:click="add" class="btn">入力した生徒を追加する</button>
+
+       <p>
+        <ul v-for="item in items" id="element">     
+                <li>
+                 ID<span v-html="item[0]"></span> / Nom <span v-html="item[1]"></span>  / Cours <span v-html="item[2]"></span>  /  受講期 <span v-html="item[3]"></span>
+                </li>
+            </ul>
+       </p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
